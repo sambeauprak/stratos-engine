@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stratos Engine — démo</title>
+<link rel="icon" href="data:,">
+<style>
+  html, body { margin: 0; height: 100%; background: #101112; overflow: hidden; font-family: system-ui, sans-serif; color: #fff; }
+  #stage { position: fixed; inset: 0; }
+  canvas { width: 100%; height: 100%; display: block; }
+  .hud { position: fixed; top: 16px; left: 16px; right: 16px; display: flex; justify-content: space-between; pointer-events: none; font-weight: 800; }
+  .box { background: rgba(10, 10, 11, .78); padding: 10px 16px; font-size: 32px; }
+  #count { position: fixed; inset: 0; display: grid; place-content: center; font-size: 120px; font-weight: 900; pointer-events: none; }
+  #menu { position: fixed; inset: 0; display: grid; place-content: center; gap: 12px; background: rgba(10,10,11,.85); text-align: center; }
+  #menu[hidden] { display: none; }
+  #menu button { font: inherit; font-weight: 800; font-size: 20px; padding: 12px 24px; background: #ffc21a; border: 0; cursor: pointer; }
+  .credit { position: fixed; right: 10px; bottom: 6px; font-size: 11px; color: rgba(255,255,255,.7); }
+</style>
+</head>
+<body>
+<div id="stage"><canvas id="scene"></canvas></div>
+<div class="hud"><div class="box" id="time">0:00.00</div><div class="box" id="speed">0 km/h</div></div>
+<div id="count"></div>
+<div id="menu">
+  <h1>Stratos Engine</h1>
+  <p>Flèches ou ZQSD pour conduire, C pour la caméra, P pour la pause, R pour recommencer.</p>
+  <button data-decor="soleil">Plein soleil</button>
+  <button data-decor="coucher">Coucher de soleil</button>
+  <button data-decor="nuit">Nuit néon</button>
+  <button data-decor="soleil" data-track="prado">Le Prado, en 406</button>
+</div>
+<div class="credit">Lancia Stratos : James Slater (Sketchfab), CC BY 4.0 · Peugeot 406 : zairiq (Sketchfab), CC BY 4.0</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
